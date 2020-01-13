@@ -1,10 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Marco from "../views/Marco.vue";
+import Marco from "../views/Marco/Marco.vue";
 import Felix from "../views/Felix.vue";
 import Philipp from "../views/Philipp.vue";
 import G from "../views/G.vue";
+import Heroes from "@/views/Marco/Heroes.vue";
+import Villains from "@/views/Marco/Villains.vue";
 
 Vue.use(VueRouter);
 
@@ -17,7 +19,20 @@ const routes = [
   {
     path: "/marco",
     name: "marco",
-    component: Marco
+    component: Marco,
+    children: [
+      { path: '', redirect: 'heroes'},
+      {
+        path: "heroes",
+        name: "heroes",
+        component: Heroes
+      },
+      {
+        path: "villains",
+        name: "villains",
+        component: Villains
+      },
+    ]
   },
   {
     path: "/Felix",
