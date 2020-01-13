@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Marco from "../views/Marco.vue";
+import Philipp from "../views/Philipp.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     path: "/marco",
     name: "marco",
     component: Marco
+  },
+  {
+    path: "/philipp",
+    name: "philipp",
+    component: Philipp
   }
 ];
 
