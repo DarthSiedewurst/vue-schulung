@@ -7,7 +7,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+// @ is an alias to /src ...
 import HelloWorld from "@/components/HelloWorld.vue";
 import Navigation from "@/components/Navigation.vue";
 
