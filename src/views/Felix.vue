@@ -1,11 +1,14 @@
 <template>
-  <b-container>
+<b-container>
+  
     <div class="mt-2">
       Selected: <strong>{{ selected }}</strong>
     </div>
     <Navigation urlBack="/marco" urlForward="/G" back="Marco" forward="G"></Navigation>
-    <HelloWorld msg="Felix coole Webseite" /> 
+    <HelloWorld msg="Felix Webseite!" /> 
+    <h1>"Woohooooo"</h1>
   </b-container>
+  
 </template>
 
 <script lang="ts">
