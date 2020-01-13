@@ -21,7 +21,7 @@
     <div class="mt-2">
       Selected: <strong>{{ selected }}</strong>
     </div>
-    <Navigation urlBack="/" urlForward="/marco" back="home" forward="marco"></Navigation>
+    <Navigation urlBack="/philipp" urlForward="/Felix" back="Philipp" forward="Felix"></Navigation>
   </b-container>
 </template>
 
