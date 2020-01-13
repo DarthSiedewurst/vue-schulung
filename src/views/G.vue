@@ -12,6 +12,5 @@ import Navigation from "@/components/Navigation.vue";
 components: { Navigation}
 })
 export default class G extends Vue {
-  private selected = null;
 }
 </script>
