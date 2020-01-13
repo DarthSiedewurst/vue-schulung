@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Marco from "../views/Marco.vue";
 import Felix from "../views/Felix.vue";
 import Philipp from "../views/Philipp.vue";
+import G from "../views/G.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/philipp",
     name: "philipp",
     component: Philipp
+  },
+  {
+    path: "/G",
+    name: "G",
+    component: G
   }
 ];
 
