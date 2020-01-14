@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <img alt="Vue logo" src="../assets/wookie_m.jpg" />
+    <img alt="Vue logo" src="@/assets/wookie_m.jpg" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <Navigation urlBack="/G" urlForward="/marco" back="G" forward="marco"></Navigation>
   </b-container>
