@@ -1,49 +1,33 @@
 <template>
-  <b-container>
-    <h1 class="hv_head">Helden</h1>
-    <p></p>
-    <div v-for="hero in heroes" :key="hero.id">
-      <b-row>
-        <b-col class="col-4">
-          <p>{{ hero.name }}</p>
-        </b-col>
-        <b-col class="col-8">
-          <p><b-button type="button" @click="deleteHero(hero.id)">löschen</b-button></p>
-        </b-col>
-      </b-row>
-    </div>
-      <b-row>
-        <b-col class="col-4">
-          <input v-model="newHero"/>
-        </b-col>
-        <b-col class="col-8">
-          <b-button type="button" @click="addHero"> Held hinzufügen</b-button>
-        </b-col>
-      </b-row>
+  <b-container class="heldenhafterContainer"> 
+    <h1>Helden</h1>
+    <heroesList :heroes="heroes" @addHeroEvent="addHero"></heroesList>
   </b-container>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import HeroesList from "@/views/Marco/HeroesList.vue";
+
 
 @Component({
-components: { }
+components: { HeroesList}
 })
 export default class Heroes extends Vue {
 
-  private heroes: object[] = [
-    {name: 'Jabba The Hut' , id: 0},
-    {name: 'Aquaman' , id: 1},
-    {name: 'Iron Man' , id: 2},
-  ]
+  private get heroes() {
+   return this.$store.state.heroes;
+  }   
+
+  private set heroes(e: any) {
+    this.$store.commit('setHeroes', e)
+  }
 
   private newHero: string = '';
 
-  private addHero() {
-    const id = this.heroes.length;
-    const hero = {name: this.newHero, id}
-    this.heroes.push(hero);
-    this.newHero = '';
+  private addHero(hero: any) {
+    this.heroes.push(hero)
+
   }
 
   private deleteHero(id: number) {
@@ -59,5 +43,4 @@ export default class Heroes extends Vue {
 </script>
 
 <style scoped>
-
 </style>

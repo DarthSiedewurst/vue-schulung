@@ -1,9 +1,9 @@
 <template>
-  <b-container>
+  <b-container class="heldenhafterRahmen">
     <b-row>
-      <b-col class="col-2">
-        <p><router-link to="/marco/heroes">Heroes</router-link></p>
-        <p><router-link to="/marco/villains">Villains</router-link></p>
+      <b-col class="col-2 heldenhafteNavigation">
+        <h2><router-link to="/marco/heroes">Heroes</router-link></h2>
+        <h2><router-link to="/marco/villains">Villains</router-link></h2>
       </b-col>
       <b-col class="col-20">
         <router-view/>
@@ -23,3 +23,13 @@ components: { Navigation}
 export default class Marco extends Vue {
 }
 </script>
+
+<style scoped>
+.heldenhafteNavigation{
+  background-color: lightgray;
+}
+.heldenhafterRahmen{
+  border: 1px solid;
+        box-shadow: 5px 10px;
+}
+</style>
