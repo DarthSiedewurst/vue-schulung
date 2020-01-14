@@ -1,34 +1,35 @@
 <template>
   <b-container class="heldenhafterContainer"> 
-    <h1>Helden</h1>
-    <heroesList :heroes="heroes" @addHeroEvent="addHero"></heroesList>
+    <div  v-for="hero in heroes" :key="hero.id" >
+        <h3 class="heldenhaft">{{ hero.name }}</h3>
+        <b-button class="heldenhafterButton" type="button" @click="deleteHero(hero.id)">löschen</b-button>
+    </div>
+    <input v-model="newHero"/>
+    <b-button type="button" @click="addHero"> Held hinzufügen</b-button>
   </b-container>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import HeroesList from "@/views/Marco/HeroesList.vue";
-
 
 @Component({
-components: { HeroesList}
+components: { }
 })
-export default class Heroes extends Vue {
-
-  private get heroes() {
-   return this.$store.state.heroes;
-  }   
-
-  private set heroes(e: any) {
-    this.$store.commit('setHeroes', e)
-  }
+export default class HeroesList extends Vue {
+    @Prop() private heroes!: object[];
+  
 
   private newHero: string = '';
 
-  private addHero(hero: any) {
-    this.heroes.push(hero)
+  
+  private addHero() {
+    const id = this.heroes.length;
+    const hero = {name: this.newHero, id}
+    this.$emit('addHeroEvent', hero);
 
-  }
+    this.newHero = '';
+    }
+
 
   private deleteHero(id: number) {
     let newHeroList: any[] = this.heroes;
