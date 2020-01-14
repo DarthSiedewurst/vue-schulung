@@ -6,7 +6,8 @@ import Heroes from "../views/Marco/Heroes.vue";
 import Villains from "../views/Marco/Villains.vue";
 import Felix from "../views/Felix.vue";
 import Philipp from "../views/Philipp.vue";
-import G from "../views/G.vue";
+import G from "../views/G/G.vue";
+import GVillains from "../views/G/Villains.vue";
 
 Vue.use(VueRouter);
 
@@ -50,7 +51,23 @@ const routes = [
   {
     path: "/G",
     name: "G",
-    component: G
+    component: G,
+    children: [
+      {
+        path: "",
+        name: "hereos",
+      },
+      {
+        path: "heroes",
+        name: "heroes",
+        component: Heroes
+      },
+      {
+        path: "villains",
+        name: "villains",
+        component: GVillains,
+      }
+    ]
   }
 ];
 
