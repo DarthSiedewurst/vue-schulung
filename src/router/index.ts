@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Marco from "../views/Marco/Marco.vue";
 import Heroes from "../views/Marco/Heroes.vue";
 import Villains from "../views/Marco/Villains.vue";
+import FVillains from "../views/Villains.vue";
 import Felix from "../views/Felix/Felix.vue";
 import Philipp from "../views/Philipp.vue";
 import G from "../views/G.vue";
@@ -55,7 +56,7 @@ const routes = [
       {
         path: "villains",
         name: "villains",
-        component: Villains
+        component: FVillains
       }
     ]
   },
