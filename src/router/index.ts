@@ -4,7 +4,8 @@ import Home from "../views/Home.vue";
 import Marco from "../views/Marco/Marco.vue";
 import Heroes from "../views/Marco/Heroes.vue";
 import Villains from "../views/Marco/Villains.vue";
-import Felix from "../views/Felix.vue";
+import FVillains from "../views/Villains.vue";
+import Felix from "../views/Felix/Felix.vue";
 import Philipp from "../views/Philipp.vue";
 import G from "../views/G/G.vue";
 import GVillains from "../views/G/Villains.vue";
@@ -41,7 +42,24 @@ const routes = [
   {
     path: "/Felix",
     name: "Felix",
-    component: Felix
+    component: Felix,
+    children: [
+
+      {
+        path: "",
+        name: "heroes"
+      },
+      {
+        path: "heroes",
+        name: "heroes",
+        component: Heroes
+      },
+      {
+        path: "villains",
+        name: "villains",
+        component: FVillains
+      }
+    ]
   },
   {
     path: "/philipp",
