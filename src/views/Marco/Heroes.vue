@@ -1,12 +1,25 @@
 <template>
-  <b-container> 
-    <h1>Helden</h1>
+  <b-container>
+    <h1 class="hv_head">Helden</h1>
+    <p></p>
     <div v-for="hero in heroes" :key="hero.id">
-        <p>{{ hero.name }}</p>
-        <b-button type="button" @click="deleteHero(hero.id)">löschen</b-button>
+      <b-row>
+        <b-col class="col-4">
+          <p>{{ hero.name }}</p>
+        </b-col>
+        <b-col class="col-8">
+          <p><b-button type="button" @click="deleteHero(hero.id)">löschen</b-button></p>
+        </b-col>
+      </b-row>
     </div>
-    <input v-model="newHero"/>
-    <b-button type="button" @click="addHero"> Held hinzufügen</b-button>
+      <b-row>
+        <b-col class="col-4">
+          <input v-model="newHero"/>
+        </b-col>
+        <b-col class="col-8">
+          <b-button type="button" @click="addHero"> Held hinzufügen</b-button>
+        </b-col>
+      </b-row>
   </b-container>
 </template>
 
@@ -44,3 +57,7 @@ export default class Heroes extends Vue {
   }
 }
 </script>
+
+<style scoped>
+
+</style>
