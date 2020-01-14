@@ -43,20 +43,4 @@ export default class Heroes extends Vue {
 </script>
 
 <style scoped>
-  	.heldenhaft {
-      color: crimson;
-      background-color: aqua;
-      text-align: center;
-      border: 1px solid;
-      padding: 10px;
-      box-shadow: 5px 10px;
-      margin-right: 200px; 
-      margin-left: 200px; 
-    }
-    .heldenhafterButton {
-      margin-bottom: 50px;
-    }
-    .heldenhafterContainer{
-      text-align: center;
-    }
 </style>

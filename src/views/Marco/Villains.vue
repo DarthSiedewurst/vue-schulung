@@ -1,12 +1,25 @@
 <template>
-  <b-container> 
-    <h1>Villains</h1>
-    <div v-for="hero in heroes" :key="hero.id">
-        <p>{{ hero.name }}</p>
-        <b-button type="button" @click="deleteHero(hero.id)">löschen</b-button>
-    </div>
-    <input v-model="newHero"/>
-    <b-button type="button" @click="addHero"> Villain hinzufügen</b-button>
+  <b-container>
+    <h1>Bösewichte</h1>
+    <p></p>
+    <div v-for="villain in villains" :key="villain.id">
+      <b-row>
+        <b-col class="col-4">
+          <p>{{ villain.name }}</p>
+        </b-col>
+        <b-col class="col-8">
+          <p><b-button type="button" @click="deleteVillain(villain.id)">löschen</b-button></p>
+        </b-col>
+      </b-row>
+    </div>      
+    <b-row>
+        <b-col class="col-4">
+          <input v-model="newVillain"/>
+        </b-col>
+        <b-col class="col-8">
+          <b-button type="button" @click="addVillain"> Bösewicht hinzufügen</b-button>
+        </b-col>
+      </b-row>
   </b-container>
 </template>
 
@@ -16,31 +29,35 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
 components: { }
 })
-export default class Heroes extends Vue {
 
-  private heroes: object[] = [
-    {name: 'Prinzessin Lillifee' , id: 0},
-    {name: 'Die drei ???' , id: 1},
-    {name: 'Teletubbies (super böse)' , id: 2},
+export default class Villains extends Vue {
+
+  private villains: object[] = [
+    {name: 'Skeletor' , id: 0},
+    {name: 'Pizza the Hut' , id: 1},
+    {name: 'Lord Helmchen' , id: 2},
   ]
 
-  private newHero: string = '';
+  private newVillain: string = '';
 
-  private addHero() {
-    const id = this.heroes.length;
-    const hero = {name: this.newHero, id}
-    this.heroes.push(hero);
-    this.newHero = '';
+  private addVillain() {
+    const id = this.villains.length;
+    const villain = {name: this.newVillain, id}
+    this.villains.push(villain);
+    this.newVillain = '';
   }
 
-  private deleteHero(id: number) {
-    let newHeroList: any[] = this.heroes;
-    this.heroes = [];
-    newHeroList.splice(id,1);
+  private deleteVillain(id: number) {
+    let newVillainList: any[] = this.villains;
+    this.villains = [];
+    newVillainList.splice(id,1);
 
-    for (let i = 0; i < newHeroList.length; i++) {
-      this.heroes.push({ name: newHeroList[i].name, id: i})
+    for (let i = 0; i < newVillainList.length; i++) {
+      this.villains.push({ name: newVillainList[i].name, id: i})
     }
   }
 }
 </script>
+<style scoped>
+
+</style>

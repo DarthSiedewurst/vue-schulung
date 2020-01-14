@@ -1,7 +1,7 @@
 <template>
   <b-container>
-    <img alt="Vue logo" src="@/assets/wookie_m.jpg" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <img id="wookie_pic" alt="Wookie Monster" src="../assets/wookie_m.jpg" />
+    <HelloWorld msg="COOKIES!!! OM NOM NOM NOM NOM!" />
     <Navigation urlBack="/G" urlForward="/marco" back="G" forward="marco"></Navigation>
   </b-container>
 </template>
