@@ -5,7 +5,7 @@
         <h2><router-link to="/marco/heroes">Heroes</router-link></h2>
         <h2><router-link to="/marco/villains">Villains</router-link></h2>
       </b-col>
-      <b-col class="col-20">
+      <b-col class="col-10">
         <router-view/>
       </b-col>
     </b-row>
